@@ -1,0 +1,22 @@
+﻿@page "/mydata"
+@inject Services.ApiService apiservice
+
+<h1>Get Greetings from API</h1>
+
+<p>Greeting: @greetings</p>
+
+<button class="btn btn-primary" @onclick="GreetMe">Click me</button>
+
+
+
+@code {
+
+    string greetings;
+
+    public void GreetMe()
+    {
+        var content = apiservice.fetchdata();
+        greetings = content.Result;
+    }
+
+}

@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  webappsignalr:
+    image: ${DOCKER_REGISTRY-}webappsignalr
+    build:
+      context: .
+      dockerfile: WebAppSignalR/Dockerfile
+    
+  blazorsignalrclient:
+    image: ${DOCKER_REGISTRY-}blazorsignalrclient
+    build:
+      context: .
+      dockerfile: BlazorSignalRClient/Dockerfile
+   

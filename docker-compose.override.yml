@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  webappsignalr:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+;http://+
+      - ASPNETCORE_HTTPS_PORT=5001
+    ports:
+      - "5001:443"
+
+  blazorsignalrclient:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+;http://+
+      - ASPNETCORE_HTTPS_PORT=5500
+    ports:
+      - "5500:443"
+
